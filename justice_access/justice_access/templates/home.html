@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justice Access</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+<body>
+    
+    <h1>Welcome to the Justice Access Portal</h1>
+    <p>Providing legal information, connecting citizens with legal aid and tracking court case progress.</p>
+   
+    <main>
+        
+        <h2>Explore Our Services</h2>
+        <p>Find Legal information and assistance tailored to your needs.</p>
+        
+        <ul>
+            
+            <li><a href="{% url 'legal_information' %}">Legal Information</a></li>
+            <li><a href="{% url 'legal_aid' %}">Legal Aid</a></li>
+            <li><a href="{% url 'track_case' %}">Track Case</a></li>
+            <li><a href="{% url 'legal_info_list' %}">Legal Info List</a></li>
+            <li><a href="{% url 'legal_info_detail' topic_id=1 %}">Legal Info Detail (Example ID: 1)</a></li> <!-- Replace '1' with a valid topic_id -->
+            <li><a href="{% url 'request_legal_aid' %}">Request Legal Aid</a></li>
+            <li><a href="{% url 'legal_aid_thanks' %}">Thank You</a></li>
+            <li><a href="{% url 'case_tracking' %}">Case Tracking</a></li>
+            <li><a href="{% url 'view_requests' %}">Submitted Requests</a></li>
+        </ul>
+
+        <div class="image-container"></div>
+            <img src="{% static 'images/agreement.jpg' %}" alt="Legal Document" class="transition-image">
+            <img src="{% static 'images/attorney.jpg' %}" alt="Legal Assistance" class="transition-image">
+            <img src="{% static 'images/judge_hammer.jpg' %}" alt="Legal Instrument" class="transition-image">
+            <img src="{% static 'images/legalteam.jpg' %}" alt="Legal Team" class="transition-image">
+        </div>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Legal Access Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'js/animations.js' %}"></script>
+</body>
+</html>

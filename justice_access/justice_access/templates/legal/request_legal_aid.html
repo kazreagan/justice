@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Legal Aid</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Request Legal Aid</h1>
+    <form method="POST" action="{% url 'request_legal_aid' %}">
+        {% csrf_token %}
+        {{ form.as_p}}
+        
+        <div class="form-container">
+        <button type="submit" class="submit-button">Submit</button>
+        </div>
+    </form>
+    <a href="{% url 'home' %}">Back to Home</a>
+    <footer><p>&copy; 2024 Legal Access Portal. All rights reserved.</p></footer>
+</body>
+</html>

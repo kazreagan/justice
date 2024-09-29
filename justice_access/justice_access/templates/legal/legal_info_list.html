@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Information List</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>List of Legal Topics</h1>
+    <ol>
+        {% for topic in topics %}
+            <li>
+                <li><a href="{% url 'legal_info_detail' topic.id %}">{{ topic.title }}</a></li>
+            </li>
+        {% empty %}
+            <li>No legal topics available at the moment.</li>
+        {% endfor %}
+    </ol>
+    <a href="{% url 'home' %}">Back to Home</a>
+
+    <footer><p>&copy; 2024 Legal Access Portal. All rights reserved.</p></footer>
+</body>
+</html>

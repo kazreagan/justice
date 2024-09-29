@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Information</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Legal Information Portal</h1>
+    <ul>
+        {% for info in info %}
+            <li>{{ info.title }} - {{ info.content }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to Home</a>
+
+    <footer><p>&copy; 2024 Legal Access Portal. All rights reserved.</p></footer>
+</body>
+</html>

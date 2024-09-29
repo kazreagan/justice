@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Aid</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Legal Aid Organizations</h1>
+    <ul>
+        {% for org in aid_orgs %}
+            <li>
+                <h2>{{ org.name }}</h2>
+                <p>Service Area: {{ org.service_area }}</p>
+                <p>Contact Info: {{ org.contact_info }}</p>
+            </li>
+        {% empty %}
+            <li>No Legal Aid Organizations available at the moment.</li>
+        {% endfor %}
+    </ul>
+    <input type="text" id="search" placeholder="Search Legal Aid">
+    <script src="{% static 'js/legal_aid.js' %}"></script>
+    <a href="{% url 'home' %}">Back to Home</a>
+
+    <footer><p>&copy; 2024 Legal Access Portal. All rights reserved.</p></footer>
+</body>
+</html>

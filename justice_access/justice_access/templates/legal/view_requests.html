@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submitted Requests</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Submitted Legal Aid Requests</h1>
+    <ul>
+        {% for request in requests %}
+            <li>{{request.name}} - {{ request.email }} - {{ request.issue_description}}</li>
+        {% empty %}
+            <li>No requests submitted yet.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to Home</a>
+    <footer>
+        <p>&copy; 2024 Legal Access Portal. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Thank you for submitting your legal aid request. We will contact you shortly!</h1>
+    <a href="{% url 'home' %}">Back to Home</a>
+
+    <footer><p>&copy; 2024 Legal Access Portal. All rights reserved.</p></footer>
+</body>
+</html>
