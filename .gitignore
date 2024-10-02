@@ -1,0 +1,6 @@
+.env
+raah
+static
+*.sqlite3
+__pycache__
+# settings.py
